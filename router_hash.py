@@ -81,11 +81,10 @@ class RouterHash:
             if indice == indice_original:
                 break
 
-        return f"\nNo se encontró la ruta para la IP: {ip}"
+        return 0
 
     def imprimir_tabla(self):
-        # Funcion de prueba para visualizar la tabla
-        print("\n--- Tabla de Enrutamiento Actual ---")
+        # Funcion  para visualizar la tabla de rutas
         for i, item in enumerate(self.tabla):
             if item is None:
                 print(f"Índice {i}: [Vacío]")
