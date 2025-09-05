@@ -22,41 +22,41 @@ def limpiar_consola():
 
 
 def presionar_tecla():
-    input("\n🔙 Presiona Enter para regresar...")
+    input("\nPresiona Enter para regresar...")
 
 
 def mostrar_menu():
     # Muestra el menú principal del programa
     print("=" * 50)
-    print("🌐 SISTEMA DE ENRUTAMIENTO HASH")
+    print("SISTEMA DE ENRUTAMIENTO HASH")
     print("=" * 50)
-    print("📋 OPCIONES DISPONIBLES:")
-    print("1️⃣  ➕ Agregar nueva ruta")
-    print("2️⃣  🔍 Buscar ruta existente")
-    print("3️⃣  📊 Mostrar tabla de rutas")
-    print("4️⃣  🚪 Salir del programa")
+    print("OPCIONES DISPONIBLES:")
+    print("1.) Agregar nueva ruta")
+    print("2.) Buscar ruta existente")
+    print("3.) Mostrar tabla de rutas")
+    print("4.) Salir del programa")
     print("=" * 50)
 
 
 def agregar_nueva_ruta(router):
     # Permite al usuario agregar una nueva ruta de forma interactiva
     limpiar_consola()
-    print("➕ AGREGAR NUEVA RUTA")
+    print("AGREGAR NUEVA RUTA")
     print("-" * 25)
 
     while True:
-        ip = input("🌐 Ingresa la dirección IP (formato: xxx.xxx.xxx.xxx): ").strip()
+        ip = input(" Ingresa la dirección IP (formato: xxx.xxx.xxx.xxx): ").strip()
         if ip:
             break
-        print("❌ Por favor, ingresa una dirección IP válida.")
+        print(" Por favor, ingresa una dirección IP válida.")
 
     while True:
         interfaz = input(
-            "🔌 Ingresa el nombre de la interfaz (ej: eth0, wlan1): "
+            " Ingresa el nombre de la interfaz (ej: eth0, wlan1): "
         ).strip()
         if interfaz:
             break
-        print("❌ Por favor, ingresa un nombre de interfaz válido.")
+        print("Por favor, ingresa un nombre de interfaz válido.")
 
     router.agregar_ruta(ip, interfaz)
     presionar_tecla()
@@ -65,20 +65,20 @@ def agregar_nueva_ruta(router):
 def buscar_ruta_existente(router):
     # Permite al usuario buscar una ruta de forma interactiva
     limpiar_consola()
-    print("🔍 BUSCAR RUTA")
+    print("BUSCAR RUTA")
     print("-" * 15)
 
     while True:
-        ip = input("🌐 Ingresa la dirección IP a buscar: ").strip()
+        ip = input(" Ingresa la dirección IP a buscar: ").strip()
         if ip:
             break
-        print("❌ Por favor, ingresa una dirección IP válida.")
+        print("Por favor, ingresa una dirección IP válida.")
 
     resultado = router.buscar_ruta(ip)
     if resultado:
-        print(f"\n✅ Ruta encontrada: {ip} -> {resultado}")
+        print(f"\n Ruta encontrada: {ip} -> {resultado}")
     elif resultado == 0:
-        print(f"\n❌ No se encontró la ruta para la IP: {ip}")
+        print(f"\n No se encontró la ruta para la IP: {ip}")
 
     presionar_tecla()
 
@@ -86,7 +86,7 @@ def buscar_ruta_existente(router):
 def mostrar_tabla(router):
     # Muestra la tabla de rutas de forma interactiva
     limpiar_consola()
-    print("📊 TABLA DE RUTAS")
+    print("TABLA DE RUTAS")
     print("-" * 20)
     router.imprimir_tabla()
     presionar_tecla()
@@ -103,7 +103,7 @@ def main():
     while True:
         try:
             mostrar_menu()
-            opcion = input("🎯 Selecciona una opción (1-4): ").strip()
+            opcion = input("Selecciona una opción (1-4): ").strip()
 
             if opcion == "1":
                 agregar_nueva_ruta(router)
@@ -113,22 +113,22 @@ def main():
                 mostrar_tabla(router)
             elif opcion == "4":
                 limpiar_consola()
-                print("👋 ¡Gracias por usar el Sistema de Enrutamiento Hash!")
-                print("🚀 ¡Hasta luego!")
+                print("¡Gracias por usar el Sistema de Enrutamiento Hash!")
+                print("¡Hasta luego!")
                 break
             else:
                 print(
-                    "\n❌ Opción inválida. Por favor, selecciona una opción del 1 al 4."
+                    "\nOpción inválida. Por favor, selecciona una opción del 1 al 4."
                 )
                 presionar_tecla()
 
         except KeyboardInterrupt:
-            print("\n\n👋 Programa interrumpido por el usuario.")
-            print("🚀 ¡Hasta luego!")
+            print("\n\Programa interrumpido por el usuario.")
+            print("¡Hasta luego!")
             break
         except Exception as e:
-            print(f"\n❌ Error inesperado: {e}")
-            input("⏸️  Presiona Enter para continuar...")
+            print(f"\n Error inesperado: {e}")
+            input(" Presiona Enter para continuar...")
         limpiar_consola()
 
 
