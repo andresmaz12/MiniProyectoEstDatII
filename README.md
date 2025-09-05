@@ -6,7 +6,7 @@ Proyecto  tablas hash simulador de un router
 ### Andre Velasco - 1546124
 ### Andres Mazariegos - 1535724
 ### Jordin Garcia - 2427124
-### Rocio Elizabeth Cojulum -
+### Rocio Elizabeth Caxaj Pú - 2016523
 
 ## Descripción del proyecto
 ### Obejtivos:
@@ -23,7 +23,7 @@ Proyecto  tablas hash simulador de un router
 + Tabla hash y metodo de desencriptamiento: Jordin Garica
 + Metodo main y menu principal: André Velzaco
 + Read me y control del repositorio: Andrés Mazariegos
-+ Solución de errores y testeo del programa: Rocio Coujum
++ Solución de errores y testeo del programa: Rocio Caxaj
 
 ## Especificaciones tecnicas
 ### router_hash.py
